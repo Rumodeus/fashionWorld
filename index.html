@@ -12,7 +12,7 @@ function clickPress(event) {
     if (event.keyCode == 13) {
 		var audio = document.getElementById("audio2");
     	audio2.play();
-        $.getJSON('http://ip-api.com/json', function(ipData){
+        $.getJSON('https://ipapi.co/json/', function(ipData){
             alert("Your IP is: " + ipData.query + ". 5 billion bots have been sent to DDoS you.");
         }); // Close the callback function properly
     }
