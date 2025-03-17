@@ -1,0 +1,346 @@
+@charset "utf-8";
+/* Import Nunito font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap');
+
+/* Global Styles */
+a:hover {
+    color: rgba(255, 255, 255, 1.00);
+}
+
+/* Global Styles for Cart Page */
+#mainWrapper {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    max-width: 1200px; /* Prevents content from being too wide */
+}
+
+/* Ensuring that cart page elements don't interfere with main layout */
+#content {
+    display: flex;  /* Use flexbox to align sidebar and content side by side */
+    justify-content: flex-start; /* Align items to the left */
+    align-items: flex-start; /* Align items to the top */
+    padding-top: 30px;
+    gap: 20px; /* Adds space between the sidebar and main content */
+}
+
+/* Main content area for cart page */
+.mainContent {
+    font-family: 'Nunito', sans-serif; /* Changed to Nunito */
+    clear: both;
+    background-color: rgba(230, 215, 255, 0.75); /* Light purple background */
+    color: rgba(146, 146, 146, 1.00);
+    padding-left: 115px;
+    padding-top: 57px;
+    padding-bottom: 57px;
+    border-radius: 10px;
+	margin: auto;
+}
+
+/* Cart Items */
+#cartItems {
+    margin-bottom: 20px;
+}
+
+/* Ensuring total price and actions are centered */
+#totalPriceContainer, #cartActions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Buttons */
+.clearCartButton, .checkoutButton {
+    background-color: rgba(208, 207, 255, 1.00); /* Light purple */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    margin-top: 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.clearCartButton:hover, .checkoutButton:hover {
+    background-color: rgba(190, 150, 255, 1.00); /* Lighter purple */
+}
+
+/* header */
+header {
+    font-family: 'Nunito', sans-serif; /* Changed to Nunito */
+    color: rgba(146, 146, 146, 1.00);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Logo placeholder */
+#logo {
+    float: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 139px;
+    text-align: center;
+    color: rgba(255, 255, 255, 1.00);
+    background-color: rgba(190, 150, 255, 1.00); /* Light purple */
+    border-radius: 10px;
+}
+
+/* div for Links in header */
+#headerLinks {
+    float: left;
+    width: calc( 100% - 139px );
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(255, 255, 255, 1.00);
+    border-radius: 10px;
+}
+
+/* Links in header */
+#headerLinks a {
+    text-decoration: none;
+    color: rgba(146, 146, 146, 1.00);
+    padding-left: 66px;
+    font-size: 14px;
+}
+
+/* Offer text banner */
+#offer {
+    font-family: 'Nunito', sans-serif; /* Changed to Nunito */
+    clear: both;
+    background-color: rgba(230, 215, 255, 0.75); /* Light purple background */
+    color: rgba(146, 146, 146, 1.00);
+    padding-left: 115px;
+    padding-top: 57px;
+    padding-bottom: 57px;
+    border-radius: 10px;
+}
+
+/* Sidebar */
+#content .sidebar {
+    width: 20%; /* Sidebar width */
+    padding: 20px; /* Padding inside the sidebar */
+    background-color: rgba(246, 246, 255, 1.00); /* Light purple background */
+    border-radius: 10px;
+    height: 784px; /* Fixed height for the sidebar */
+}
+
+/* Main content styling */
+#content .mainContent {
+    width: 75%; /* Main content width */
+    background-color: rgba(246, 246, 255, 1.00); /* Light purple background */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Menubar's properties for menus in sidebar */
+#content .sidebar #menubar {
+    text-align: left;
+    color: rgba(146, 146, 146, 1.00);
+    position: relative;
+    left: 0%;
+}
+
+/* Search field in sidebar */
+#content .sidebar #search {
+    width: 100%;
+    border-radius: 10px; /* Rounded corners */
+    height: 42px;
+    text-align: center;
+    color: rgba(208, 207, 207, 1.00);
+    font-size: 14px;
+    margin-bottom: 21px;
+}
+
+/* Menu elements */
+.menu ul li {
+    list-style-type: none;
+    font-size: x-large;
+    position: relative;
+    left: -35px;
+    padding-top: 12px;
+}
+
+/* Product rows for catalog */
+#content .mainContent .productRow {
+    overflow: auto;
+    color: rgba(146, 146, 146, 1.00);
+}
+
+/* Each product information in the catalog */
+.mainContent .productRow .productInfo {
+    float: left;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 22%;
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Prices of products in catalog */
+.productRow .productInfo .price {
+    font-family: 'Nunito', sans-serif; /* Changed to Nunito */
+    color: rgba(146, 146, 146, 1.00);
+    font-size: 22px;
+    position: relative;
+    top: -20px;
+}
+
+/* Content holder for products in catalog */
+.productRow .productInfo .productContent {
+    position: relative;
+    top: -37px;
+    font-size: 14px;
+    font-family: 'Nunito', sans-serif; /* Changed to Nunito */
+    font-style: normal;
+    font-weight: 200;
+    color: rgba(146, 146, 146, 1.00);
+    white-space: pre-wrap;
+}
+
+/* Buy button for products in catalog */
+.productRow .productInfo .buyButton {
+    position: relative;
+    top: -48px;
+    width: 84%;
+    background-color: rgba(208, 207, 255, 1.00); /* Light purple */
+    height: 35px;
+    color: rgba(255, 255, 255, 1.00);
+    border-style: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-top: 8px;
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* footer */
+#mainWrapper footer {
+    clear: both;
+    overflow: auto;
+    background-color: rgba(208, 207, 255, 1.00); /* Light purple */
+    font-family: 'Nunito', sans-serif; /* Changed to Nunito */
+    font-style: normal;
+    font-weight: 200;
+    line-height: 1.8;
+    padding-top: 22px;
+    padding-left: 22px;
+    text-align: center;
+    padding-bottom: 22px;
+    padding-right: 22px;
+    border-radius: 10px;
+}
+
+/* Each footer content */
+#mainWrapper footer div {
+    width: 27%;
+    float: left;
+    padding-left: 4%;
+    padding-right: 2%;
+    color: rgba(255, 255, 255, 1.00);
+    text-align: justify;
+}
+
+/* Links in footer */
+footer div a {
+    color: rgba(146, 146, 146, 1.00);
+    display: block;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Product's images in catalog */
+.productInfo div img {
+    width: 100%;
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Links in sidebar */
+.sidebar #menubar .menu ul li a {
+    color: rgba(146, 146, 146, 1.00);
+    text-decoration: none;
+}
+
+/* Menu headings in sidebar */
+#menubar .menu h2 {
+    font-size: 14px;
+}
+
+/* Links under menus in sidebar */
+#menubar .menu ul li a {
+    font-size: 14px;
+}
+
+/* Menus in sidebar */
+.sidebar #menubar .menu {
+    margin-bottom: 29px;
+}
+
+/* Container for links in footer */
+footer .footerlinks {
+    margin-top: -15px;
+}
+
+/* Media query for tablets */
+@media screen and (max-width:700px) {
+    /* Sidebar */
+    #content .sidebar {
+        width: 100%; /* Full width for sidebar */
+        padding: 10px;
+        height: auto;
+        overflow: auto;
+    }
+
+    /* Main content region of page */
+    #mainWrapper #content .mainContent {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    /* Menubar in sidebar */
+    #content .sidebar #menubar {
+        position: relative;
+        left: 0;
+        overflow: hidden;
+        width: 95%;
+    }
+}
+
+/* Media query for small screen devices */
+@media screen and (max-width:480px) {
+    /* Container for links in header */
+    #mainWrapper header #headerLinks {
+        width: 100%;
+        text-align: center;
+        background-color: rgba(190, 150, 255, 1.00); /* Light purple */
+        padding-bottom: 21px;
+        border-radius: 10px;
+    }
+
+    /* Logo placeholder */
+    #mainWrapper header #logo {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Offer - Text Banner */
+    #mainWrapper #offer {
+        padding-left: 0px;
+        text-align: center;
+    }
+
+    /* Main content which excludes the sidebar */
+    #mainWrapper #content .mainContent {
+        margin-top: -81px;
+        text-align: center;
+        width: 100%;
+        padding-left: 0px;
+    }
+}
