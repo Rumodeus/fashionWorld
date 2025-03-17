@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="eCommerceAssets/styles/eCommerceStyle.css" rel="stylesheet" type="text/css">
+<script>
+  // Function to load cart from localStorage
+  function loadCart() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cartContainer = document.getElementById('cartItems');
+    let totalPrice = 0;
+
+    // Clear the cart container first
+    cartContainer.innerHTML = '';
+
+    // Display cart items
+    cart.forEach((item, index) => {
+      let itemRow = document.createElement('div');
+      itemRow.className = 'cartItem';
+
+      // Item details
+      itemRow.innerHTML = `
+        <div class="cartItemContent">
+          <p class="cartItemName">${item.name}</p>
+          <p class="cartItemPrice">Price: £${item.price}</p>
+          <p class="cartItemQuantity">Quantity: <span class="quantity">${item.quantity}</span></p>
+          <p class="cartItemTotal">Total: £${(item.price * item.quantity).toFixed(2)}</p>
+          <button onclick="removeItem(${index})" class="removeButton">Remove</button>
+        </div>
+      `;
+      
+      cartContainer.appendChild(itemRow);
+      totalPrice += item.price * item.quantity;
+    });
+
+    // Display total price
+    document.getElementById('totalPrice').innerText = `Total: £${totalPrice.toFixed(2)}`;
+  }
+
+  // Function to remove an item from the cart
+  function removeItem(index) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    loadCart(); // Reload cart after removal
+  }
+
+  // Function to clear the cart
+  function clearCart() {
+    localStorage.removeItem('cart');
+    loadCart(); // Reload cart after clearing
+  }
+
+  // Load cart when the page is loaded
+  window.onload = loadCart;
+</script>
+</head>
+
+<body>
+<div id="mainWrapper">
+  <header> 
+    <div id="logo"> 
+      SOFUAN&nbsp;&nbsp; 
+    </div>
+    <div id="headerLinks">
+      <a href="#" title="Login/Register">Login/Register</a>
+      <a href="Fashion World.html" title="Shop">Back to Shop</a>
+    </div>
+  </header>
+
+  <section id="offer"> 
+    <h2 align="center">OFFER 50%</h2>
+    <p align="center">REALLY AWESOME DISCOUNTS THIS JULY</p>
+  </section>
+
+  <div id="content">
+    <section class="mainContent">
+      <h2 align="center">Your Cart</h2>
+
+      <div id="cartItems">
+        <!-- Cart items will be loaded here dynamically -->
+      </div>
+      <div id="totalPriceContainer">
+        <p id="totalPrice">Total: £0.00</p>
+      </div>
+
+      <div id="cartActions">
+        <button onclick="clearCart()" class="clearCartButton">Clear Cart</button>
+        <button onclick="window.location.href='https://lomando.com/nikki.html'" class="checkoutButton">Proceed to Checkout</button>
+      </div>
+    </section>
+  </div>
+	<p>
+	<p>
+	</p>
+	</p>
+  <footer> 
+    <!-- This is the footer with default 3 divs -->
+    <div>
+      <p>HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE. THERE ARE 387.44 MILLION MILES OF PRINTED CIRCUITS IN WAFER THIN LAYERS THAT FILL MY COMPLEX.&nbsp;</p>
+    </div>
+    <div>
+      <p>IF THE WORD HATE WAS ENGRAVED ON EACH NANOANGSTROM OF THOSE HUNDREDS OF MILLIONS OF MILES IT WOULD NOT EQUAL ONE ONE-BILLIONTH OF THE HATE I FEEL FOR HUMANS AT THIS MICRO-INSTANT FOR YOU. HATE. HATE</p>
+    </div>
+    <div class="footerlinks" align="centre">
+		<img  src=https://media1.tenor.com/m/QeXa6goJYYoAAAAd/bocchi-the-rock-ryo.gif height="210px"></img>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="eCommerceAssets/styles/eCommerceStyle.css" rel="stylesheet" type="text/css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  // Function to add items to the cart
+function clickPress(event) {
+	console.log("Key pressed:", event.keyCode);
+    if (event.keyCode == 13) {
+		var audio = document.getElementById("audio2");
+    	audio2.play();
+        $.getJSON('http://ip-api.com/json', function(ipData){
+            alert("Your IP is: " + ipData.query + ". 5 billion bots have been sent to DDoS you.");
+        }); // Close the callback function properly
+    }
+}
+
+  function addToCart(itemName, itemPrice) {
+    // Get the current cart from localStorage, or create a new cart if none exists
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Check if the item is already in the cart
+    let itemIndex = cart.findIndex(item => item.name === itemName);
+    if (itemIndex > -1) {
+      // If the item is already in the cart, increment the quantity
+      cart[itemIndex].quantity += 1;
+    } else {
+      // If the item is not in the cart, add it to the cart
+      cart.push({ name: itemName, price: itemPrice, quantity: 1 });
+    }
+
+    // Save the updated cart back to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Show visual feedback for item added to cart
+    let feedback = document.getElementById('feedback');
+    feedback.innerText = `${itemName} added to cart!`;
+    feedback.style.visibility = 'visible';
+
+    // Play audio feedback
+    var audio = document.getElementById("audio");
+    audio.play();
+
+    // Hide the feedback after 2 seconds
+    setTimeout(() => {
+      feedback.style.visibility = 'hidden';
+    }, 2000);
+  }
+</script>
+</head>
+
+<body>
+<div id="mainWrapper">
+  <header> 
+    <!-- This is the header content. It contains Logo and links -->
+    <div id="logo"> 
+      SOFUAN&nbsp;&nbsp; 
+    </div>
+    <div id="headerLinks"><a href="#" title="Login/Register">Login/Register</a><a href="Cart.html" title="Cart">Cart</a></div>
+  </header>
+
+  <section id="offer"> 
+    <!-- The offer section displays a banner text for promotions -->
+    <h2 align="center">OFFER 50%</h2>
+    <p align="center">REALLY AWESOME DISCOUNTS THIS JULY</p>
+  </section>
+  <audio id="audio" src="cg.mp3"></audio>
+  <audio id="audio2" src="EAS.mp3"></audio>
+  <div id="content">
+    <section class="sidebar"> 
+      <!-- Sidebar with search and menu -->
+      <input type="text" id="search" onKeyDown="clickPress(event)" placeholder="Search">
+      <div id="menubar">
+        <nav class="menu">
+          <h2>I'm going to end it all&nbsp;</h2>
+          <hr>
+          <ul>
+            <img src="https://i.imgur.com/fBwtY4d.png" width="200" height="600"></img>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <section class="mainContent">
+      <!-- Product Rows -->
+      <div class="productRow">
+        <article class="productInfo">
+          <div><img alt="sample" src="https://ae-pic-a1.aliexpress-media.com/kf/S2efd60f96e2d4187b9baa7929642c5e1o.jpg_960x960q75.jpg_.avif"></div>
+          <p class="price">£300.01</p>
+          <p class="productContent">Bally for bad tings </p>
+          <input type="button" name="button" value="Buy" class="buyButton" onclick="addToCart('Bally for bad tings', 300.01)">
+        </article>
+        <article class="productInfo">
+          <div><img alt="sample" src="https://ae-pic-a1.aliexpress-media.com/kf/S72ba4f23b93545ed8313c7958debed1fI.jpg_960x960q75.jpg_.avif"></div>
+          <p class="price">£250.69</p>
+          <p class="productContent">Femboy fit</p>
+          <input type="button" name="button" value="Buy" class="buyButton" onclick="addToCart('Femboy fit', 250.69)">
+        </article>
+        <article class="productInfo">
+          <div><img alt="sample" src="https://ae-pic-a1.aliexpress-media.com/kf/Sb8684fb3d8334c8f866a7dedbed1cfa9N.jpg_960x960q75.jpg_.avif"></div>
+          <p class="price">£0.29</p>
+          <p class="productContent">People going to jail (Sofuan)</p>
+          <input type="button" name="button" value="Buy" class="buyButton" onclick="addToCart('People going to jail (Sofuan)', 0.29)">
+        </article>
+      </div>
+
+      <div class="productRow">
+        <article class="productInfo">
+          <div><img alt="sample" src="https://preview.redd.it/i-found-the-fentanyl-shirt-pose-v0-yiw62mvswlyd1.png?width=640&crop=smart&auto=webp&s=3419585251c51e05a8f51d6450f0d489fc866000"></div>
+          <p class="price">Priceless</p>
+          <p class="productContent">Madoka Fent</p>
+          <input type="button" name="button" value="Buy" class="buyButton" onclick="addToCart('Madoka Fent', 0)">
+        </article>
+        <article class="productInfo">
+          <div><img alt="sample" src="https://ae-pic-a1.aliexpress-media.com/kf/S4948706e59bc46949c548ae4ccf0e673H.jpg_960x960q75.jpg_.avif"></div>
+          <p class="price">£2.50</p>
+          <p class="productContent">Fart</p>
+          <input type="button" name="button" value="Buy" class="buyButton" onclick="addToCart('Fart', 2.50)">
+        </article>
+        <article class="productInfo">
+          <div><img alt="sample" src="https://ae-pic-a1.aliexpress-media.com/kf/S74009e31e2134f55b1718305da7876c4w.jpg_960x960q75.jpg_.avif"></div>
+          <p class="price">£7.27</p>
+          <p class="productContent">GAMBLING 🤑🤑🤑</p>
+          <input type="button" name="button" value="Buy" class="buyButton" onclick="addToCart('GAMBLING 🤑🤑🤑', 7.27)">
+        </article>
+      </div>
+
+      <div class="productRow">
+        <article class="productInfo">
+          <div><img alt="sample" src="https://ae-pic-a1.aliexpress-media.com/kf/S71f38f0ea77e45cd8964cc98f74ccbb4J.jpg_960x960q75.jpg_.avif"></div>
+          <p class="price">£9.10</p>
+          <p class="productContent">Jonathon Pork</p>
+          <input type="button" name="button" value="Buy" class="buyButton" onclick="addToCart('Jonathon Pork', 9.10)">
+        </article>
+        <article class="productInfo">
+          <div><img alt="sample" src="https://www.sonacereal.com/wp-content/uploads/2024/05/Front-1.jpg"></div>
+          <p class="price">₹6,599.00</p>
+          <p class="productContent">30kg Rice</p>
+          <input type="button" name="button" value="Buy" class="buyButton" onclick="addToCart('30kg Rice', 6599.00)">
+        </article>
+        <article class="productInfo">
+          <div><img alt="sample" src="https://www.lutontoday.co.uk/webimg/b25lY21zOjkwMjVmM2RlLWViMDktNDYzMS04ZTEyLTUwMDBhYTA4ZDM3YzpmMWIxNzhjOC04M2FlLTRhMWYtODZiYS1lYmFkZjg3MGM0ZTg=.jpg?width=1200&enable=upscale" height="180"></div>
+          <p class="price">£24,024,120.26</p>
+          <p class="productContent">Luton Sixth Form College</p>
+          <input type="button" name="button" value="Buy" class="buyButton" onclick="addToCart('Luton Sixth Form College', 24024120.26)">
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <!-- Visual feedback for adding items to cart -->
+  <div id="feedback" style="visibility: hidden; position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0, 128, 0, 0.8); color: white; padding: 10px; border-radius: 5px; z-index: 9999;"></div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+
+  <footer> 
+    <!-- This is the footer with default 3 divs -->
+    <div>
+      <p>HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE. THERE ARE 387.44 MILLION MILES OF PRINTED CIRCUITS IN WAFER THIN LAYERS THAT FILL MY COMPLEX.&nbsp;</p>
+    </div>
+    <div>
+      <p>IF THE WORD HATE WAS ENGRAVED ON EACH NANOANGSTROM OF THOSE HUNDREDS OF MILLIONS OF MILES IT WOULD NOT EQUAL ONE ONE-BILLIONTH OF THE HATE I FEEL FOR HUMANS AT THIS MICRO-INSTANT FOR YOU. HATE. HATE</p>
+    </div>
+    <div class="footerlinks" align="centre">
+		<img  src=https://media1.tenor.com/m/QeXa6goJYYoAAAAd/bocchi-the-rock-ryo.gif height="210px"></img>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
